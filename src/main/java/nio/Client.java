@@ -34,7 +34,7 @@ public class Client extends Thread {
             sc.connect(new InetSocketAddress("127.0.0.1", 1234));
             if (sc.finishConnect()) {
                 int i = 0;
-                while (i <= 3) {
+                while (i < 3) {
                     TimeUnit.SECONDS.sleep(1);
                     String info = "thread name = " + name + ";i am " + ++i
                             + "-th information from client";

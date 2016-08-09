@@ -63,8 +63,8 @@ public class Server {
             ssc.bind(new InetSocketAddress(1234));
             ssc.register(selector, SelectionKey.OP_ACCEPT);
             while (true) {
-                if (selector.select() == 0) {
-                    // System.out.println("==");
+                if (selector.select(3000) == 0) {
+                    System.out.println("==");
                     continue;
                 }
                 Set<SelectionKey> keys = selector.selectedKeys();
